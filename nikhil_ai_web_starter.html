@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080d1c">
+<title>NIKHIL AI</title>
+<style>
+:root{--bg:#080d1c;--panel:#111a2d;--line:#243451;--cyan:#63e6ff;--violet:#9b8cff;--text:#f3f6ff;--muted:#9aa8c4}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#18294a 0,#080d1c 52%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.wrap{max-width:760px;margin:auto;padding:18px 14px 30px}.top{display:flex;align-items:center;gap:12px;margin:4px 0 20px}.logo{width:48px;height:48px;border:1px solid #4fbcdf;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#15304a,#26204f);box-shadow:0 0 24px #42d8ff25;font-size:24px}.brand{font-weight:800;letter-spacing:2px;font-size:20px}.sub{color:var(--muted);font-size:12px;margin-top:2px}.status{margin-left:auto;border:1px solid #315a60;color:#7ef0c2;background:#0d292b;padding:6px 9px;border-radius:99px;font-size:11px;white-space:nowrap}
+.hero{text-align:center;padding:20px 10px 24px}.orb{width:142px;height:142px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 35% 30%,#a4f5ff 0,#55b8ef 13%,#3945a0 44%,#12162e 70%);box-shadow:0 0 22px #53dfff66,0 0 65px #7765ff30;animation:float 4s ease-in-out infinite}.orb:before,.orb:after{content:"";position:absolute;inset:-9px;border:1px solid #62ddff75;border-radius:50%;transform:rotateX(65deg)}.orb:after{inset:-18px;border-color:#9b8cff65;transform:rotateY(65deg) rotateX(10deg)}.orb span{font-size:43px;font-weight:900;color:#071020;text-shadow:0 1px #fff8}.hero h1{font-size:26px;margin:0 0 6px;letter-spacing:1px}.hero p{color:var(--muted);margin:0;font-size:14px}@keyframes float{50%{transform:translateY(-5px)}}
+.card{background:#10192bd9;border:1px solid var(--line);border-radius:18px;padding:15px;margin:12px 0;box-shadow:0 10px 35px #0002}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}.quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.quick button,.secondary{background:#17243b;color:var(--text);border:1px solid #30415f;border-radius:12px;padding:12px;text-align:left;font-size:13px}.quick button:active,button:active{transform:scale(.98)}button{cursor:pointer}.quick b{display:block;font-size:18px;margin-bottom:4px}.chat{min-height:150px;max-height:350px;overflow:auto;display:flex;flex-direction:column;gap:10px}.msg{max-width:90%;padding:11px 13px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-wrap}.bot{align-self:flex-start;background:#17243b;border:1px solid #2d4162}.user{align-self:flex-end;background:linear-gradient(135deg,#265e7a,#463b85);border:1px solid #527bb7}.composer{display:flex;gap:8px;margin-top:12px}.composer input{flex:1;min-width:0;background:#080f20;border:1px solid #30415f;border-radius:13px;color:white;padding:13px;font-size:15px;outline:none}.primary{border:0;border-radius:13px;background:linear-gradient(135deg,#62e2ff,#9484ff);color:#071020;font-weight:800;padding:0 17px}.microw{display:flex;gap:8px;margin-top:10px}.mic{flex:1;border:1px solid #38617a;border-radius:12px;padding:12px;background:#102b3b;color:#8cecff;font-weight:700}.voice{background:#202044;border-color:#4c467e;color:#c3baff}.selectrow{display:flex;gap:8px;align-items:center}.selectrow label{color:var(--muted);font-size:13px}.selectrow select{margin-left:auto;background:#0b1324;color:white;border:1px solid #30415f;border-radius:10px;padding:9px;max-width:60%}.notice{font-size:12px;line-height:1.55;color:#c5cde0}.notice strong{color:#f7d58b}.footer{text-align:center;color:#7787a7;font-size:11px;padding:16px 8px}
+@media(min-width:600px){.quick{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{padding-top:28px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="logo">✦</div><div><div class="brand">NIKHIL AI</div><div class="sub">Personal assistant • Mobile prototype</div></div><div class="status" id="status">● READY</div></header>
+<section class="hero"><div class="orb"><span>N</span></div><h1>Namaste, Nikhil!</h1><p>Bolkar ya type karke apna kaam batayein.</p></section>
+<section class="card"><div class="label">Quick actions</div><div class="quick">
+<button onclick="quick('Abhi ka time batao')"><b>◷</b>Time batao</button>
+<button onclick="quick('YouTube kholo')"><b>▶</b>YouTube kholo</button>
+<button onclick="quick('Google kholo')"><b>⌕</b>Google kholo</button>
+<button onclick="quick('Mujhe motivate karo')"><b>✧</b>Motivation</button>
+</div></section>
+<section class="card"><div class="label">Assistant chat</div><div class="chat" id="chat" aria-live="polite"><div class="msg bot">Namaste! Main NIKHIL AI ka starter version hoon. Aap Hindi, Gujarati ya English mein bol sakte hain. Neeche mic dabayein ya message type karein.</div></div>
+<div class="composer"><input id="input" placeholder="Yahan message likhein…" autocomplete="off"><button class="primary" onclick="send()">SEND</button></div>
+<div class="microw"><button class="mic" id="mic" onclick="listen()">🎙️ Bolkar batayein</button><button class="mic voice" onclick="speakLast()">🔊 Jawab suno</button></div></section>
+<section class="card"><div class="label">Settings</div><div class="selectrow"><label for="lang">Baat karne ki language</label><select id="lang"><option value="hi-IN">Hindi</option><option value="gu-IN">Gujarati</option><option value="en-IN">English</option></select></div></section>
+<section class="card notice"><strong>Important:</strong> Yeh abhi ek working browser prototype hai—voice input (browser support par), bolkar jawab, aur Google/YouTube jaise quick actions. Ismein abhi real online AI brain ya phone ke sabhi apps ko control karne ki permission connected nahi hai. Real AI ke liye secure server connection chahiye; API secret ko HTML file mein rakhna safe nahi hota. “Hello Nikhil” background wake-word aur APK ke liye baad mein native Android app banana padega.</section>
+<div class="footer">NIKHIL AI • Starter build • Aapke phone par Chrome ke liye</div>
+</main>
+<script>
+const chat=document.getElementById('chat'), input=document.getElementById('input'), statusEl=document.getElementById('status');
+let lastReply='Namaste! Main aapki madad ke liye yahan hoon.';
+function add(text,who){const d=document.createElement('div');d.className='msg '+who;d.textContent=text;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+function reply(text){lastReply=text;add(text,'bot');}
+function send(){const t=input.value.trim();if(!t)return;input.value='';add(t,'user');handle(t);}
+function quick(t){add(t,'user');handle(t);}
+input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+function handle(raw){const t=raw.toLowerCase();let r='';
+if(t.includes('time')||t.includes('samay')||t.includes('સમય')){r='Abhi time '+new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})+' hai.';}
+else if(t.includes('date')||t.includes('tarikh')||t.includes('તારીખ')){r='Aaj ki date '+new Date().toLocaleDateString('en-IN')+' hai.';}
+else if(t.includes('youtube')){r='YouTube khol raha hoon.';window.open('https://www.youtube.com/','_blank');}
+else if(t.includes('google')){r='Google khol raha hoon.';window.open('https://www.google.com/','_blank');}
+else if(t.includes('motivate')||t.includes('himmat')||t.includes('પ્રેરણા')){r='Nikhil, ek-ek kadam aage badho. Galti ya mushkil aapki poori kahani nahi hoti. Aaj ka chhota sahi faisla kal ka bada badlav ban sakta hai.';}
+else if(t.includes('kem cho')||t.includes('કેમ છો')){r='હું મજામાં છું! તમે કેમ છો? હું તમારી મદદ માટે તૈયાર છું.';}
+else if(t.includes('namaste')||t.includes('hello')||t.includes('hi ')){r='Namaste! Batao, main aapki kya madad karun?';}
+else {r='Maine aapka message suna/samjha, lekin is starter version mein real AI jawab abhi connected nahi hai. Real AI brain jodne ke liye secure backend chahiye. Filhaal aap Time, Date, Google, YouTube ya Motivation try kar sakte hain.';}
+reply(r);}
+function speakLast(){if(!('speechSynthesis'in window)){reply('Is browser mein voice output support nahi hai.');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(lastReply);u.lang=document.getElementById('lang').value;u.rate=0.94;speechSynthesis.speak(u);}
+function listen(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){reply('Aapke browser mein speech recognition available nahi hai. Chrome mein page kholkar mic permission check karein.');return;}const rec=new SR();rec.lang=document.getElementById('lang').value;rec.interimResults=false;rec.maxAlternatives=1;statusEl.textContent='● LISTENING';document.getElementById('mic').textContent='🎙️ Sun raha hoon…';rec.onresult=e=>{input.value=e.results[0][0].transcript;send();};rec.onerror=e=>reply('Mic error: '+e.error+'. Chrome settings mein microphone permission allow karein.');rec.onend=()=>{statusEl.textContent='● READY';document.getElementById('mic').textContent='🎙️ Bolkar batayein';};rec.start();}
+</script></body></html>
